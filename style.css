@@ -1,0 +1,283 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgb(70, 194, 200);
+  background-color: lavender;
+}
+
+.container {
+  max-width: 95%;
+  margin: 50px auto 0 auto;
+  padding: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.input-container {
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.header,
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.server-list,
+.log-list {
+  flex: 1;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  height: 95vh;
+  width: 0%;
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.server-list h2,
+.log-list h2 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group button {
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid rgb(133, 193, 233);
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(133, 193, 233);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.input-group input[type="text"] {
+  width: 250px;
+  height: 30px;
+  padding: 3px;
+  font-size: 16px;
+  background-color: white;
+  /* Color de fondo similar al de la interfaz */
+  border: 2px solid rgb(178, 88, 161);
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.input-group input[type="text"]:focus {
+  color: black;
+  outline: none;
+  /* Eliminar el borde al enfocar */
+  border-color: rgb(178, 88, 161);
+  /* Cambiar el color del borde al enfocar */
+}
+
+.input-group button:hover {
+  background-color: rgb(178, 88, 161);
+  color: white;
+}
+
+.input-group button:first-child {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 250px;
+  height: 30px;
+  padding: 3px;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  width: 200px;
+  height: 30px;
+  padding: 3px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-size: cover;
+  margin: 0 20px;
+  background-image: url(image.png);
+  margin-right: 20px;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(90% / 4 - 20px), 1fr));
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: rgb(129, 10, 159);
+  color: white;
+}
+
+.server-list li {
+  margin-bottom: 10px;
+}
+
+.server-name {
+  font-weight: bold;
+}
+
+.server-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.responseTableContainer {
+  padding: 0 20px;
+  /* Espacio en el borde izquierdo y derecho */
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+}
+
+#responseTable {
+  margin: 0 auto;
+  /* Centrar la tabla horizontalmente */
+}
+
+.responseTable {
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+}
+
+#responseTable th,
+#responseTable td {
+  border-radius: 8px;
+  border: 2px solid black;
+  width: 200px;
+  padding: 25px;
+  text-align: center;
+  background-color: rgb(176, 101, 162);
+  color: white;
+  font-family: "Segoe UI";
+}
+
+#clientValue {
+  border-radius: 5px;
+}
+
+td {
+  position: relative;
+  justify-content: center;
+}
+
+td button {
+    width: 38px;
+    height: 38px;
+    border: none; 
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease; 
+  }
+  
+  td button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+  }
+  
+
+td button:hover {
+  background-color: rgb(166, 125, 176);
+}
+
+td button:hover::before {
+  left: -30px;
+  top: -30px;
+}
+
+#keywordBox, #emailBox {
+opacity: 0.5; 
+text-align: center; 
+}
+
+
+.top-right {
+position: absolute;
+top: 10px;
+right: 10px;
+z-index: 1000;
+}
+
+#logsButton {
+padding: 10px 20px;
+background-color: #2980B9;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+}
+
+#logsButton:hover {
+background-color: #3498DB ;
+}
+
+
+.server-list {
+position: relative;
+}
+
+
+/* Estilo para la caja de texto grande --------------------------------------------*/
+#largeTextBox {
+width: calc(100% - 4cm); 
+height: 440px;
+margin: 2cm; 
+resize: none; 
+overflow-y: scroll;
+padding: 10px;
+box-sizing: border-box; 
+}
