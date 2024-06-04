@@ -1,68 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Web Scraping</title>
+    <script src="https://cdn.socket.io/4.1.3/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<head>
-  <title>index</title>
-  <script src="https://cdn.socket.io/4.1.3/socket.io.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-
-</head>
-
-<body>
-  <div class="content">
-    <div class="server-list">
-      <div class="top-right">
-        <button id="logsButton" onclick="window.location.href='logs.html'">Logs</button>
+  <body>
+    <div class="content">
+      <div class="server-list">
+        <h1>WEB SCRAPING</h1>
+        <div class="top-right">
+          <button id="logsButton" onclick="logs()">Logs</button>
+        </div>
+        <div class="input-group margin-top-input">
+          <div>
+            <label for="keywordBox">Palabra clave</label>
+            <input
+              type="text"
+              id="keywordBox"
+              value="Ingrese la palabra clave"
+              onfocus="clearText(this)"
+            />
+          </div>
+          <div>
+            <label for="emailBox">Email</label>
+            <input
+              type="text"
+              id="emailBox"
+              value="email"
+              onfocus="clearText(this)"
+            />
+          </div>
+          <button onclick="submitForm()">Buscar</button>
+        </div>
       </div>
-      <h1>WEB SCRAPING</h1>
-      <p id="current-time"></p>
-      <ul id="serverList"></ul>
-
-      <input type="text" id="emailBox" value="Ingrese la palabra clave" onfocus="clearText(this)">
-      <input type="text" id="keywordBox" value="email" onfocus="clearText(this)">
-
-      <button id="submitButton" onclick="submitForm()">Buscar</button>
     </div>
-  </div>
-
-  <script>
-    function clearText(element) {
-      if (element.value === "correo electronico" || element.value === "Ingrese la palabra clave") {
-        element.value = "";
-      }
-    }
-
-    function submitForm() {
-      var email = document.getElementById("emailBox").value.trim();
-      var keyword = document.getElementById("keywordBox").value.trim();
-
-      if (keyword === "") {
-        alert("Por favor, ingrese una palabra clave.");
-        return;
-      }
-
-      if (email === "" || email === "correo electronico" || keyword === "" || keyword === "Ingrese la palabra clave") {
-        alert("Por favor, complete todos los campos.");
-        return;
-      }
-
-      fetch(`http://localhost:3000/scraping?keyword=${keyword}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text();
-        })
-        .then(data => {
-          alert(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('Hubo un error al realizar la solicitud.');
-        });
-    }
-
-  </script>
-</body>
-
+  </body>
 </html>
